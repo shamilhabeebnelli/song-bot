@@ -2,7 +2,7 @@ Pyrogram==1.2.9
 TgCrypto==1.2.2
 wheel
 python-arq
-aiohttp==3.6.2
+aiohttp==3.7.4
 youtube_dl
 youtube_search_python
 youtube_search
