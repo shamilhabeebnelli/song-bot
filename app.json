@@ -1,0 +1,41 @@
+{
+  "name": "MwK-Song - Bot",
+  "description": "Telegram Bot to Download Yt mp3",
+  "logo": "https://telegra.ph/file/a3937c3ddc19bb3300d89.jpg",
+  "repository": "https://github.com/shamilhabeebnelli/song-bot",
+  "keywords": [
+    "telegram",
+    "bot",
+    "music",
+    "python",
+    "pyrogram",
+  ],
+  "env": {
+    "API_ID": {
+      "description": "api_id part of your Telegram API Key from my.telegram.org/apps",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "api_hash part of your Telegram API Key from my.telegram.org/apps",
+      "required": true
+    },
+    "BOT_TOKEN": {
+      "description": "Bot token of Bot, get from @Botfather",
+      "required": true
+}
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
