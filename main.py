@@ -15,15 +15,11 @@ import pyrogram
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 
-if __name__ == "__main__" :
-    plugins = dict(
-        root="siri"
-    )
-    app = pyrogram.Client(
-        "Siri",
-        bot_token=Config.BOT_TOKEN,
-        api_id=Config.APP_ID,
-        api_hash=Config.API_HASH,
-        plugins=siri
+app = pyrogram.Client(
+      "Siri",
+       bot_token=Config.BOT_TOKEN,
+       api_id=Config.APP_ID,
+       api_hash=Config.API_HASH,
+       plugins=dict(root="siri")
     )
     app.run()
