@@ -8,3 +8,4 @@ youtube_search_python
 youtube_search
 wget
 requests
+ffmpeg-python
