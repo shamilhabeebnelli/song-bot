@@ -22,4 +22,4 @@ app = pyrogram.Client(
        api_hash=Config.API_HASH,
        plugins=dict(root="siri")
     )
-    app.run()
+app.run()
