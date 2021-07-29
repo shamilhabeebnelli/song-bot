@@ -1,4 +1,4 @@
-from pyrogram import Client, idle, filters
+from pyrogram import Client, filters
 
 import youtube_dl
 from youtube_search import YoutubeSearch
@@ -22,7 +22,7 @@ MwK = Client(
 )
 
 START_STRING = """ Hi {}, I'm SongBot. 
-Kindly sent /song "song name"""
+Kindly sent `/song song name`"""
 
 
 BUTTON = InlineKeyboardMarkup(
