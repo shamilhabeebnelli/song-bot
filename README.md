@@ -1,9 +1,14 @@
-### song-bot
-You can download youtube songs to MP3 from telegram #musics
+###### song-bot
+You can download youtube to MP3 from telegram bot #musics
+with & without commands
 
-## Deploy to Heroku Bot with /song command
+## Deploy - Simplest Way
+### Deploy to Heroku Bot with /song command
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/shamilhabeebnelli/song-bot/tree/main)
 
 ## Deploy Bot Without Command
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/shamilhabeebnelli/song-bot/tree/Without-CMD)
+
+## Deploy Hard Way
+No Any Hard Ways Deploy simple way 🤗🤣
