@@ -25,13 +25,11 @@ START_MSG="Hi {} I can Help You with downloading all yt links alson support song
 
 BUTTON1="📜 Source Code 📜"
 
-@Client.on_message(filters.command(['song']))
+@Client.on_message(filters.text)
 def a(client, message):
-    query = ''
-    for i in message.command[1:]:
-        query += ' ' + str(i)
+    query=message.text
     print(query)
-    m = message.reply('`Searching... Please Wait...`')
+    m = message.reply('🧐')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = []
@@ -62,11 +60,11 @@ def a(client, message):
 
         except Exception as e:
             print(e)
-            m.edit('**👎 Nᴏᴛʜɪɴɢ Tᴏ Bᴇ Fᴏᴜɴᴅ 🥺 Oʀ Cʜᴇᴄᴋ Sᴩᴇʟʟɪɴɢ 🤗!**')
+            m.edit('**👎 Nothing to found 🥺 Try with another 🤗!**')
             return
     except Exception as e:
         m.edit(
-            "**Enter Song Name with /song Command!**"
+            "**send a keyword or youtube link !**"
         )
         print(str(e))
         return
@@ -85,7 +83,7 @@ def a(client, message):
         m.delete()
         message.delete()
     except Exception as e:
-        m.edit('**Sᴇᴇᴍꜱ Lɪᴋᴇ Aɴ Eʀʀᴏʀ Oᴄᴄᴜʀᴇᴅ 🥶 Report This @redbullfed!!**')
+        m.edit('**Internal error occured {err} 🥶 Report This @redbullfed!!**')
         print(e)
     try:
         os.remove(audio_file)
