@@ -94,6 +94,9 @@ async def start(client, message):
             [
                 [
                     InlineKeyboardButton("Source Code", url=f"https://github.com/shamilhabeebnelli/song-bot")
+                 ],[
+                    InlineKeyboardButton("Owner", url=f"https://telegram.dog/{Config.Owner}"),
+                    InlineKeyboardButton("Developer", url=f"https://t.me/{APPER}")
             ]
           ]
         ),
