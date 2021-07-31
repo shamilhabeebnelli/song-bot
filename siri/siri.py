@@ -6,6 +6,7 @@ import requests
 
 import os
 
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, reply_markup
 ## Extra Fns -------------------------------
 
 # Convert hh:mm:ss to seconds
@@ -24,7 +25,7 @@ def a(client, message):
         query += ' ' + str(i)
     print(query)
     m = message.reply('`Searching... Please Wait...`')
-    ydl_opts = {"format": "bestaudio[ext=mp3]"}
+    ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = []
         count = 0
