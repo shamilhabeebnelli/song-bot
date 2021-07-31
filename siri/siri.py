@@ -6,6 +6,7 @@ import requests
 
 import os
 
+from config import Config
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 ## Extra Fns -------------------------------
 
