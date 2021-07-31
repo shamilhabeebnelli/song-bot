@@ -10,6 +10,8 @@ from config import Config
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 ## Extra Fns -------------------------------
 
+B2="bit.ly/A_BS_KL"
+
 # Convert hh:mm:ss to seconds
 def time_to_seconds(time):
     stringt = str(time)
@@ -18,6 +20,10 @@ def time_to_seconds(time):
 START_MSG="Hi {} I can Help You with downloading all yt links alson support song name just do `/song song name`"
 
 ## Commands --------------------------------
+
+# Button
+
+BUTTON1="📜 Source Code 📜"
 
 @Client.on_message(filters.command(['song']))
 def a(client, message):
@@ -87,7 +93,16 @@ def a(client, message):
     except Exception as e:
         print(e)
 
+######## SOME THING UNOFFICIAL #####
+
+ABS="Developer"
 APPER="shamilhabeeb"
+
+############ URL #############
+
+OWNER="Owner"
+
+GITCLONE="bit.ly/GIT_CLONE"
 
 @Client.on_message(filters.command('start') & filters.private)
 async def start(client, message):
@@ -95,10 +110,10 @@ async def start(client, message):
          reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Source Code", url=f"https://github.com/shamilhabeebnelli/song-bot")
+                    InlineKeyboardButton(BUTTON1, url=GITCLONE)
                  ],[
-                    InlineKeyboardButton("Owner", url=f"https://telegram.dog/{Config.Owner}"),
-                    InlineKeyboardButton("Developer", url=f"https://t.me/{APPER}")
+                    InlineKeyboardButton(OWNER, url=f"https://telegram.dog/{Config.OWNER}"),
+                    InlineKeyboardButton(ABS, url=B2)
             ]
           ]
         ),
