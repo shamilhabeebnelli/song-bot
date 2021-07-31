@@ -13,6 +13,7 @@ def time_to_seconds(time):
     stringt = str(time)
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(':'))))
 
+START_MSG="Hi {} I can Help You with downloading all yt links alson support song name just do `/song song name`"
 
 ## Commands --------------------------------
 
@@ -83,3 +84,17 @@ def a(client, message):
         os.remove(thumb_name)
     except Exception as e:
         print(e)
+
+
+@Client.on_message(filters.command('start') & filters.private)
+async def start(client, message):
+    await message.reply_text(text=START_MSG.format(message.from_user.mention),
+         reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton("Source Code", url=f"https://github.com/shamilhabeebnelli/song-bot")
+            ]
+          ]
+        ),
+        reply_to_message_id=message.message_id
+    )
