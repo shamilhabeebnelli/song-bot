@@ -1,7 +1,7 @@
 {
     "name": "Song-Bot",
     "description": "A Modular telegram song bot.",
-    "repository": "https://github.com/shamilhabeebnelli/Song-Bot",
+    "repository": "https://github.com/shamilhabeebnelli/Song-Bot/tree/Without-CMD",
     "keywords": [
        
         "telegram bot",
@@ -10,6 +10,9 @@
     "env": {
         "BOT_TOKEN": {
             "description": "Your Bot token from @Botfather"
+        },
+        "OWNER": {
+            "description": "Your telegram username without @"
         },
         "APP_ID": {
             "description": "Your API_ID from https://my.telegram.org/apps"
