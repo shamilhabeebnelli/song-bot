@@ -10,7 +10,7 @@ from config import Config
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 ## Extra Fns -------------------------------
 
-B2="bit.ly/A_BS_KL"
+B2="telegram.dog/shamilhabeeb"
 
 # Convert hh:mm:ss to seconds
 def time_to_seconds(time):
@@ -102,7 +102,7 @@ APPER="shamilhabeeb"
 
 OWNER="Owner"
 
-GITCLONE="bit.ly/GIT_CLONE"
+GITCLONE="https://bit.ly/GIT_CLONE"
 
 @Client.on_message(filters.command('start') & filters.private)
 async def start(client, message):
