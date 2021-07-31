@@ -102,11 +102,11 @@ APPER="shamilhabeeb"
 
 OWNER="Owner"
 
-GITCLONE="https://bit.ly/GIT_CLONE"
+GITCLONE="github.com/shamilhabeebnelli/song-bot"
 
 @Client.on_message(filters.command('start') & filters.private)
 async def start(client, message):
-    await message.reply_text(text=START_MSG.format(message.from_user.mention),
+    await message.reply_photo(photo=Config.START_IMG, caption=Config.START_MSG.format(message.from_user.mention),
          reply_markup=InlineKeyboardMarkup(
             [
                 [
