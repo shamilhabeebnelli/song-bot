@@ -43,7 +43,7 @@ THUMB="bit.ly/thumbnil"
 def a(client, message):
     query=message.text
     print(query)
-    m = message.reply('fetching details from m.youtube.com')
+    m = message.reply('fetching datas from m.youtube.com')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = []
@@ -82,7 +82,7 @@ def a(client, message):
         )
         print(str(e))
         return
-    m.edit("m.youtube.com autority responded, uploading...")
+    m.edit("**m.youtube.com responded, uploading...**")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
