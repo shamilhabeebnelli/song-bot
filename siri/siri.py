@@ -94,6 +94,7 @@ def a(client, message):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
         message.reply_audio(audio_file, caption=rep, parse_mode='HTML',quote=False, title=title, duration=dur, performer=performer, thumb=thumb_name)
+        m.delete()
     except Exception as e:
         m.edit('**An internal Error Occured, Report This @redbullfed!!**')
         print(e)
