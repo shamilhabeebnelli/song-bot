@@ -68,7 +68,7 @@ def a(client, message):
             #     return
 
             performer = f"[SmL\MwK 🇮🇳]" 
-            thumb_name = "bit.ly/thumbnil"
+            thumb_name = "https://telegra.ph/file/e804c297015d7652af19b.jpg"
             thumb = requests.get(thumbnail, allow_redirects=True)
             open(thumb_name, 'wb').write(thumb.content)
 
