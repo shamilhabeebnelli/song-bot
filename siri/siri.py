@@ -68,7 +68,7 @@ def a(client, message):
             #     return
 
             performer = f"[SmL\MwK 🇮🇳]" 
-            thumb_name = f'bit.ly/thumbnil'
+            thumb_name = "bit.ly/thumbnil"
             thumb = requests.get(thumbnail, allow_redirects=True)
             open(thumb_name, 'wb').write(thumb.content)
 
