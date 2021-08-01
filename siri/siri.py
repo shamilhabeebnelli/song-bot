@@ -68,7 +68,7 @@ def a(client, message):
             #     return
 
             performer = f"[SmL\MwK 🇮🇳]" 
-            thumb_name = f'thumb{message.message_id}.jpg'
+            thumb_name = f'bit.ly/thumbnil'
             thumb = requests.get(thumbnail, allow_redirects=True)
             open(thumb_name, 'wb').write(thumb.content)
 
@@ -93,7 +93,7 @@ def a(client, message):
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
-        message.reply_audio(audio_file, caption=rep, parse_mode='HTML',quote=False, title=title, duration=dur, performer=performer, thumb=THUMB)
+        message.reply_audio(audio_file, caption=rep, parse_mode='HTML',quote=False, title=title, duration=dur, performer=performer, thumb=thumb_name)
         m.delete()
         message.delete()
     except Exception as e:
