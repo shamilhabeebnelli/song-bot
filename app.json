@@ -10,15 +10,30 @@
     "env": {
         "BOT_TOKEN": {
             "description": "Your Bot token from @Botfather"
+            "value": ""
+        },
+        "OWNER": {
+            "description": "Your telegram username without @"
+            "value": ""
+        },
+        "START_MSG": {
+            "description": "start message"
+            "value": "
+        },
+        "APP_ID": {
+            "description": "Your API_ID from https://my.telegram.org/apps"
+            "value": ""
         },
         "OWNER": {
             "description": "Your telegram username without @"
         },
-        "APP_ID": {
-            "description": "Your API_ID from https://my.telegram.org/apps"
+        "START_IMG": {
+            "description": "start message's image"
+            "value": ""
         },
         "API_HASH": {
             "description": "Your API_HASH from https://my.telegram.org/apps"
+            "value": ""
         }
     },
     "buildpacks": [
