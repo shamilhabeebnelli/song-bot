@@ -78,7 +78,7 @@ def a(client, message):
             return
     except Exception as e:
         m.edit(
-            "**m.youtube.com refused your query, try with another\n\n`Note: We can't help you with youtube shorts`**"
+            "**found nothing, please try again**"
         )
         print(str(e))
         return
