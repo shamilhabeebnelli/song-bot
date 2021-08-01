@@ -74,7 +74,7 @@ def a(client, message):
 
         except Exception as e:
             print(e)
-            m.edit('**👎 Nothing found 🥺 Retry with another !**')
+            m.edit('**👎 Nothing found Retry with another !**')
             return
     except Exception as e:
         m.edit(
@@ -97,7 +97,7 @@ def a(client, message):
         m.delete()
         message.delete()
     except Exception as e:
-        m.edit('**An internal Error Occured {err} 🥶 Report This @redbullfed!!**')
+        m.edit('**An internal Error Occured, Report This @redbullfed!!**')
         print(e)
     try:
         os.remove(audio_file)
