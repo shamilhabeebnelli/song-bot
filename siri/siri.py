@@ -8,22 +8,35 @@ import os
 
 from config import Config
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-## Extra Fns -------------------------------
 
+
+BUTTON1="📜 Source Code 📜"
 B2="telegram.dog/shamilhabeeb"
+OWNER="Owner"
+GITCLONE="github.com/shamilhabeebnelli/song-bot"
+ABS="Developer"
+APPER="shamilhabeeb"
 
-# Convert hh:mm:ss to seconds
+@Client.on_message(filters.command('start') & filters.private)
+async def start(client, message):
+    await message.reply_text(text=START_MSG.format(message.from_user.mention),
+         reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(BUTTON1, url=GITCLONE)
+                 ],[
+                    InlineKeyboardButton(OWNER, url=f"https://telegram.dog/{Config.OWNER}"),
+                    InlineKeyboardButton(ABS, url=B2)
+            ]
+          ]
+        ),
+        reply_to_message_id=message.message_id
+    )
+
 def time_to_seconds(time):
     stringt = str(time)
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(':'))))
 
-START_MSG="Hi {} I can Help You with downloading all yt links alson support song name just do `/song song name`"
-
-## Commands --------------------------------
-
-# Button
-
-BUTTON1="📜 Source Code 📜"
 
 @Client.on_message(filters.text)
 def a(client, message):
@@ -90,30 +103,3 @@ def a(client, message):
         os.remove(thumb_name)
     except Exception as e:
         print(e)
-
-######## SOME THING UNOFFICIAL #####
-
-ABS="Developer"
-APPER="shamilhabeeb"
-
-############ URL #############
-
-OWNER="Owner"
-
-GITCLONE="https://bit.ly/GIT_CLONE"
-
-@Client.on_message(filters.command('start') & filters.private)
-async def start(client, message):
-    await message.reply_text(text=START_MSG.format(message.from_user.mention),
-         reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(BUTTON1, url=GITCLONE)
-                 ],[
-                    InlineKeyboardButton(OWNER, url=f"https://telegram.dog/{Config.OWNER}"),
-                    InlineKeyboardButton(ABS, url=B2)
-            ]
-          ]
-        ),
-        reply_to_message_id=message.message_id
-    )
