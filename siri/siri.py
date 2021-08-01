@@ -37,12 +37,13 @@ def time_to_seconds(time):
     stringt = str(time)
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(':'))))
 
+THUMB="bit.ly/thumbnil"
 
 @Client.on_message(filters.text)
 def a(client, message):
     query=message.text
     print(query)
-    m = message.reply('🧐')
+    m = message.reply('fetching details from m.youtube.com')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = []
@@ -77,26 +78,26 @@ def a(client, message):
             return
     except Exception as e:
         m.edit(
-            "**send a keyword or youtube link !**"
+            "**m.youtube.com refused your query, try with another\n\n`Note: We can't help you with youtube shorts`**"
         )
         print(str(e))
         return
-    m.edit("`Bruh... Uploading... Please Wait...`")
+    m.edit("m.youtube.com autority responded, uploading...")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f'🎶 <b>Title:</b> <a href="{link}">{title}</a>\n⌚ <b>Duration:</b> <code>{duration}</code>\n📻 <b>Uploaded By:</b> <a href="https://t.me/mwklinks">MwK Song Bot</a>'
+        rep = f'🎶 <b>Title:</b> <a href="{link}">{title}</a>\n⌚ <b>Duration:</b> <code>{duration}</code>\n📻 <b>Uploaded By:</b> <a href="https://t.me/mwklinks">[MwK] Song-Bot</a>'
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
-        message.reply_audio(audio_file, caption=rep, parse_mode='HTML',quote=False, title=title, duration=dur, performer=performer, thumb=thumb_name)
+        message.reply_audio(audio_file, caption=rep, parse_mode='HTML',quote=False, title=title, duration=dur, performer=performer, thumb=THUMB)
         m.delete()
         message.delete()
     except Exception as e:
-        m.edit('**Internal error occured {err} 🥶 Report This @redbullfed!!**')
+        m.edit('**An Internal error occured; Report This @redbullfed!!**')
         print(e)
     try:
         os.remove(audio_file)
