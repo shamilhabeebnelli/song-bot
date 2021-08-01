@@ -19,7 +19,7 @@ APPER="shamilhabeeb"
 
 @Client.on_message(filters.command('start') & filters.private)
 async def start(client, message):
-    await message.reply_text(text=START_MSG.format(message.from_user.mention),
+    await message.reply_text(text=Config.START_MSG.format(message.from_user.mention),
          reply_markup=InlineKeyboardMarkup(
             [
                 [
