@@ -19,7 +19,7 @@ APPER="shamilhabeeb"
 
 @Client.on_message(filters.command('start') & filters.private)
 async def start(client, message):
-    await message.reply_text(text=Config.START_MSG.format(message.from_user.mention),
+    await message.reply_photo(photo=Config.START_IMG, caption=Config.START_MSG.format(message.from_user.mention),
          reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -73,7 +73,7 @@ def a(client, message):
 
         except Exception as e:
             print(e)
-            m.edit('**👎 Nothing to found 🥺 Try with another 🤗!**')
+            m.edit('**👎 Nothing to found 🥺 Try with another!**')
             return
     except Exception as e:
         m.edit(
