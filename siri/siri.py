@@ -45,7 +45,7 @@ THUMB="bit.ly/thumbnil"
 def a(client, message):
     query=message.text
     print(query)
-    m = message.reply('fetching datas from m.youtube.com')
+    m = message.reply('I'm Looking for It....')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = []
@@ -84,7 +84,7 @@ def a(client, message):
         )
         print(str(e))
         return
-    m.edit("**m.youtube.com responded, uploading...**")
+    m.edit("**Uploading To Songs Paradise..🎼**")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
@@ -98,7 +98,7 @@ def a(client, message):
         message.reply_audio(audio_file, caption=rep, parse_mode='HTML',quote=False, title=title, duration=dur, performer=performer, thumb=thumb_name)
         m.delete()
     except Exception as e:
-        m.edit('**An Internal error occured; Report This @redbullfed!!**')
+        m.edit('**An Internal error occured;/report it Here!!**')
         print(e)
     try:
         os.remove(audio_file)
